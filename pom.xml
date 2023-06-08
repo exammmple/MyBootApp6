@@ -11,15 +11,20 @@
 	
 	
 	<groupId>jp.te4a.spring.boot</groupId>
-	<artifactId>MyBootApp6</artifactId>
+	<artifactId>MyBootApp7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MyBootApp6</name>
+	<name>MyBootApp7</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	
 	<dependencies>
+		<dependency>
+    	    <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	    </dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -28,12 +33,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>	
-		</dependency>
-		
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		
 		<dependency>
