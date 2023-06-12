@@ -11,9 +11,9 @@
 	
 	
 	<groupId>jp.te4a.spring.boot</groupId>
-	<artifactId>MyBootApp8</artifactId>
+	<artifactId>MyBootApp7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MyBootApp8</name>
+	<name>MyBootApp7</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
