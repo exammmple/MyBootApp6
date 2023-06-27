@@ -59,11 +59,13 @@ public class BookService {
   		return bookRepository.findAll();
   	    }
   	    
-  	  public Optional<BookBean> findOne(Integer id) {//取得処理
-  	   //  BookBean bookBean = bookRepository.findById(BookBean);
-  	   /* BookForm bookForm = new BookForm();
-  	    BeanUtils.copyProperties(bookBean, bookForm);
-  	   */
-  	    return bookRepository.findById(id);
+  	  public BookForm findOne(Integer id) {//取得処理
+  	    Optional <BookBean> bookBean = bookRepository.findById(id);
+  	  BookForm bookForm = new BookForm();
+  	    bookBean.ifPresent(book ->{
+  	  	BeanUtils.copyProperties(bookBean, bookForm);
+  	  	    
+  	    });
+  	  return bookForm;
   	  }
   	}
