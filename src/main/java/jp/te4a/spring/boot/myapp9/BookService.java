@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
+private static final BookBean Bean = null;
 //	private static final BookBean BookBean = null;
 	@Autowired
   	BookRepository bookRepository; 
@@ -32,18 +33,18 @@ public class BookService {
   	}
 
   	
-  	public void update(BookForm bookForm) { //更新処理
+  	public BookForm update(BookForm bookForm) { //更新処理
   	  BookBean Bean = new BookBean();
   	  BeanUtils.copyProperties(bookForm, Bean);
   	  //bookRepository.save(bookBean);
   	  //return bookForm;
   		
   		bookRepository.save(Bean);
+  		return bookForm;
   		}
   	  
   	public void delete(Integer id) {//削除処理
-  		BookBean Bean = new BookBean();
-  		bookRepository.delete(Bean); 
+  		bookRepository.deleteById(id); 
   		}
   	  
   	  public List<BookBean> findAll() {//取得処理
@@ -60,10 +61,10 @@ public class BookService {
   	    }
   	    
   	  public BookForm findOne(Integer id) {//取得処理
-  	    Optional <BookBean> bookBean = bookRepository.findById(id);
+  	    Optional<BookBean> bookBean = bookRepository.findById(id);
   	  BookForm bookForm = new BookForm();
   	    bookBean.ifPresent(book ->{
-  	  	BeanUtils.copyProperties(bookBean, bookForm);
+  	  	BeanUtils.copyProperties(book, bookForm);
   	  	    
   	    });
   	  return bookForm;
